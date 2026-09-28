@@ -91,6 +91,9 @@ a:hover { text-decoration: underline; }
   font-family: var(--font-serif); font-weight: 700; font-size: 1.15rem;
   display: flex; align-items: center; gap: 10px; color: var(--ink); white-space: nowrap;
 }
+.brand .mark-icon {
+  height: 34px; width: auto; flex-shrink: 0; display: block;
+}
 .brand .mark {
   width: 30px; height: 30px; border-radius: 3px; background: var(--accent);
   color: #fff; display: flex; align-items: center; justify-content: center;
