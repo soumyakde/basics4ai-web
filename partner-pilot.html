@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Pilot Program — Basics4AI</title>
+<meta name="description" content="Bring a free, one-time 10-day Basics4AI pilot to your school, camp, library, or community program — walk through the full partner pitch, slide by slide, with commentary.">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .viewer {
+    border: 1px solid var(--line);
+    background: var(--paper);
+    box-shadow: var(--shadow);
+  }
+  .viewer-stage {
+    background: var(--paper-alt);
+    padding: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .viewer-stage img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--line);
+  }
+  .viewer-commentary { padding: 22px 26px 24px; }
+  .viewer-commentary .tag { display: block; margin-bottom: 10px; }
+  .viewer-commentary p { font-size: 0.98rem; max-width: 68ch; margin: 0; }
+
+  .viewer-controls {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 16px 26px 22px; flex-wrap: wrap;
+  }
+  .viewer-btn {
+    font-family: var(--font-sans); font-size: 0.88rem; font-weight: 600; color: var(--ink);
+    background: var(--paper); border: 1px solid var(--ink); padding: 9px 18px; cursor: pointer;
+  }
+  .viewer-btn:hover { background: var(--paper-alt); }
+  .viewer-btn:disabled { opacity: 0.35; cursor: default; }
+  .viewer-btn:focus-visible, .viewer-dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .viewer-dots { display: flex; gap: 7px; flex-wrap: wrap; justify-content: center; }
+  .viewer-dot {
+    width: 9px; height: 9px; border-radius: 50%; background: var(--line); border: none; padding: 0; cursor: pointer;
+    transition: background 0.15s ease, width 0.15s ease, border-radius 0.15s ease;
+  }
+  .viewer-dot[aria-current="true"] { background: var(--accent); width: 22px; border-radius: 5px; }
+
+  .viewer-hint { text-align: center; color: var(--ink-soft); font-size: 0.78rem; margin: 4px 0 0; }
+  .viewer-hint kbd {
+    font-family: var(--font-mono); background: var(--paper-alt); border: 1px solid var(--line);
+    border-radius: 3px; padding: 1px 6px; font-size: 0.75rem;
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand"><a href="index.html" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:10px;"><span class="mark">4AI</span>Basics4AI</a></div>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+    <div class="navlinks">
+      <div class="navgroup">
+        <button>Research ▾</button>
+        <div class="dropdown">
+          <a href="research-background.html">Research Background</a>
+          <a href="literature-review.html">Literature Review</a>
+          <a href="research-methodology.html">Research Methodology</a>
+          <a href="assessment-instruments.html">Assessment &amp; Survey Instruments</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button>Curriculum ▾</button>
+        <div class="dropdown">
+          <a href="curriculum-frameworks.html">Design Frameworks</a>
+          <a href="the-curriculum.html">The Curriculum</a>
+          <a href="games-activities.html">Games &amp; Activities</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button>Facilitators ▾</button>
+        <div class="dropdown">
+          <a href="sdl-handbook.html">Self-Directed Learning</a>
+          <a href="pd-handbook.html">Professional Development</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button>Pilots ▾</button>
+        <div class="dropdown">
+          <a href="pre-pilot-studies.html">Pre-Pilot Studies</a>
+          <a href="pilots-findings.html">Pilots &amp; Findings</a>
+        </div>
+      </div>
+      <a href="partner-pilot.html" class="current">Partner Pilot Program</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <span class="eyebrow">For Schools, Camps, Libraries &amp; Community Programs</span>
+    <h1>Bring a free Basics4AI pilot to your learners</h1>
+    <p class="lede">A 10-slide walkthrough of what a partner pilot involves — the research gap Basics4AI fills, how it's designed, what a 10-day engagement looks like, and what we ask of a host organization. Step through it at your own pace below.</p>
+    <div class="meta-row">
+      <span>10 slides · self-paced</span>
+      <span>No cost for the pilot</span>
+      <span>10-day / 2-week engagement</span>
+    </div>
+  </div>
+</header>
+
+<section class="block">
+  <div class="container">
+    <div class="viewer">
+      <div class="viewer-stage">
+        <img id="slideImg" src="assets/partner-pilot/slide1.png" alt="Slide 1">
+      </div>
+      <div class="viewer-commentary">
+        <span class="tag" id="slideLabel">Slide 1 of 10</span>
+        <p id="slideText"></p>
+      </div>
+      <div class="viewer-controls">
+        <button class="viewer-btn" id="prevBtn" aria-label="Previous slide">&larr; Prev</button>
+        <div class="viewer-dots" id="dots" role="tablist" aria-label="Jump to slide"></div>
+        <button class="viewer-btn" id="nextBtn" aria-label="Next slide">Next &rarr;</button>
+      </div>
+    </div>
+    <p class="viewer-hint">Use <kbd>&larr;</kbd> / <kbd>&rarr;</kbd> to navigate, or click a dot to jump to that slide.</p>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="container">
+    <span class="eyebrow">Ready When You Are</span>
+    <h2>Getting started takes three steps</h2>
+    <p class="measure">Schedule a conversation, pick your 10-day window, and Basics4AI brings the curriculum, instruction, and data collection. Reach out to set up a time.</p>
+    <p class="measure"><strong>Soumya De</strong> · University at Buffalo Institute for Learning Sciences · <a href="mailto:skde@buffalo.edu">skde@buffalo.edu</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="brand"><span class="mark">4AI</span>Basics4AI</div>
+    <p class="fine">Soumya K. De · PhD Candidate, Dept. of Learning &amp; Instruction, University at Buffalo</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var slides = [
+    {
+      img: "assets/partner-pilot/slide1.png",
+      alt: "Title slide: From How Kids Think to How AI Thinks",
+      text: "This page walks through a free, one-time pilot offer for Basics4AI, a curriculum built out of dissertation research rather than a commercial product. The tagline is the whole idea in one line — the next several slides unpack exactly what it means."
+    },
+    {
+      img: "assets/partner-pilot/slide2.png",
+      alt: "Slide showing 8%, 60%, and under 20% statistics on K-12 AI curricula",
+      text: "These three numbers come from a synthesis of 7 systematic literature reviews covering 299 empirical studies of K-12 AI education (2022–2023). Very little existing curriculum targets this exact age range, most lead with coding tools before concepts, and almost none teach ethics on purpose. Basics4AI was designed specifically to fill that gap."
+    },
+    {
+      img: "assets/partner-pilot/slide3.png",
+      alt: "Comparison of most AI curricula versus Basics4AI's cognition-first approach",
+      text: "This is the core design idea. Most curricula hand a child a tool or a line of code first and explain the concept behind it afterward, if at all. Basics4AI starts at the other end: a child already knows how to reason through a maze, a budget, or a game, so each module starts there and only then introduces the AI version of that same reasoning. Every module maps to one of eight cognitive functions shared by humans and AI — not to a programming language or a piece of software."
+    },
+    {
+      img: "assets/partner-pilot/slide4.png",
+      alt: "ADDIE, UCIT, and PBL plus GBL design framework",
+      text: "Three questions anchor how the curriculum was built. ADDIE answers how it was built and revised — continually, across every pilot site, not shipped once and left alone. UCIT (Universal Constructive Instructional Theory) answers how learning itself was designed, so kids construct understanding rather than just receive it. Problem-Based and Game-Based Learning answer how learners engage — structured reasoning paired with motivation and productive struggle."
+    },
+    {
+      img: "assets/partner-pilot/slide5.png",
+      alt: "Seven Basics4AI modules from What Is Intelligence to Build Your Own AI",
+      text: "The seven modules build on each other, from “what is intelligence” (a maze) to “build your own AI” (training a gesture-recognition model). Each one pairs a concrete, low-tech activity — Tic-Tac-Toe, Sudoku, a budgeted shopping trip, dice — with the AI concept it embodies, so nothing requires special hardware or prior coding experience."
+    },
+    {
+      img: "assets/partner-pilot/slide6.png",
+      alt: "Timeline of a 10-day pilot with check-ins every two days",
+      text: "The pilot runs 10 program days across two weeks, in whatever informal-learning setting a partner already runs — a camp, a library, an after-school program, a community center. A check-in — a short survey, assessment, and reflection — happens every other day, deliberately light rather than daily. There is no participation fee for this one-time pilot offering."
+    },
+    {
+      img: "assets/partner-pilot/slide7.png",
+      alt: "Five community sites where Basics4AI has been piloted",
+      text: "Basics4AI has already run in five different informal-education settings — a bilingual after-school program, university spring-break day camps, an under-resourced community youth center, a five-week NGO summer program, and a town recreation department's 2026 offerings. Each site surfaced real friction — attendance, hardware, family expectations — and the curriculum was revised in response every time, rather than tested once under ideal conditions."
+    },
+    {
+      img: "assets/partner-pilot/slide8.png",
+      alt: "Direct quotes from Basics4AI student participants",
+      text: "These are unedited quotes from participant interviews and post-event surveys, not copy written for marketing. They point at the effect the curriculum aims for: kids leaving with AI as something they can reason about and explain, not something mysterious."
+    },
+    {
+      img: "assets/partner-pilot/slide9.png",
+      alt: "What partnering looks like: the pilot now versus optional long-term adoption",
+      text: "For the pilot itself, the ask is small: one on-site staff member to accompany the instructor, at no cost. Everything else — licensing the course, a paid facilitator training program, an online Learning Analytics dashboard — is an entirely optional path for later, only if a partner wants to continue after the pilot, and none of that pricing is finalized yet."
+    },
+    {
+      img: "assets/partner-pilot/slide10.png",
+      alt: "Next steps: schedule a conversation, pick a 10-day window, Basics4AI handles the rest",
+      text: "Getting started takes three steps: a conversation, picking a 10-day window, and Basics4AI brings the curriculum, instruction, and data collection. Contact details are below."
+    }
+  ];
+
+  var idx = 0;
+  var img = document.getElementById("slideImg");
+  var label = document.getElementById("slideLabel");
+  var text = document.getElementById("slideText");
+  var dotsWrap = document.getElementById("dots");
+  var prevBtn = document.getElementById("prevBtn");
+  var nextBtn = document.getElementById("nextBtn");
+
+  slides.forEach(function(_, i){
+    var b = document.createElement("button");
+    b.className = "viewer-dot";
+    b.setAttribute("role", "tab");
+    b.setAttribute("aria-label", "Slide " + (i + 1));
+    b.addEventListener("click", function(){ go(i); });
+    dotsWrap.appendChild(b);
+  });
+
+  function render(){
+    var s = slides[idx];
+    img.src = s.img;
+    img.alt = s.alt;
+    label.textContent = "Slide " + (idx + 1) + " of " + slides.length;
+    text.textContent = s.text;
+    prevBtn.disabled = idx === 0;
+    nextBtn.disabled = idx === slides.length - 1;
+    var dots = dotsWrap.querySelectorAll(".viewer-dot");
+    dots.forEach(function(d, i){ d.setAttribute("aria-current", i === idx ? "true" : "false"); });
+  }
+
+  function go(i){
+    idx = Math.max(0, Math.min(slides.length - 1, i));
+    render();
+  }
+
+  prevBtn.addEventListener("click", function(){ go(idx - 1); });
+  nextBtn.addEventListener("click", function(){ go(idx + 1); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "ArrowRight") go(idx + 1);
+    if (e.key === "ArrowLeft") go(idx - 1);
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>
