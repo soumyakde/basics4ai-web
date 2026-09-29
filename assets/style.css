@@ -94,6 +94,9 @@ a:hover { text-decoration: underline; }
 .brand .mark-icon {
   height: 34px; width: auto; flex-shrink: 0; display: block;
 }
+.brand .mark-icon-footer {
+  height: 18px; width: auto; flex-shrink: 0; display: block;
+}
 .brand .mark {
   width: 30px; height: 30px; border-radius: 3px; background: var(--accent);
   color: #fff; display: flex; align-items: center; justify-content: center;
