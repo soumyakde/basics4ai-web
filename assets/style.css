@@ -92,7 +92,7 @@ a:hover { text-decoration: underline; }
   display: flex; align-items: center; gap: 10px; color: var(--ink); white-space: nowrap;
 }
 .brand .mark-icon {
-  height: 34px; width: auto; flex-shrink: 0; display: block;
+  height: 18px; width: auto; flex-shrink: 0; display: block;
 }
 .brand .mark-icon-footer {
   height: 18px; width: auto; flex-shrink: 0; display: block;
